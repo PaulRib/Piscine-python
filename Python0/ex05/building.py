@@ -1,14 +1,14 @@
 import sys
-import string
 
 
 def count_words(arg: str):
-    """Function used to count every type of character in the string"""
+    """Function used to count every type of character in the string."""
     upper = 0
     lower = 0
     space = 0
     digit = 0
     punct = 0
+    punctuation_marks = "!\"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~"
 
     for c in arg:
         if c.isupper():
@@ -19,7 +19,7 @@ def count_words(arg: str):
             space += 1
         elif c.isdigit():
             digit += 1
-        elif c in string.punctuation:
+        elif c in punctuation_marks:
             punct += 1
 
     print(f"The text contains {len(arg)} characters:")
@@ -44,6 +44,7 @@ def main():
             return
 
     count_words(arg)
+    print(count_words.__doc__)
 
 
 if __name__ == "__main__":
