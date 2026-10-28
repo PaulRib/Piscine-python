@@ -2,7 +2,7 @@ from sys import argv
 
 
 def main():
-    NESTED_MORE = {
+    NESTED_MORSE = {
         " ": "/ ",
         "A": ".- ",
         "B": "-... ",
@@ -49,9 +49,9 @@ def main():
 
     for c in arg:
         if c.isdigit() or c.isupper() or c.isspace():
-            result += NESTED_MORE[c]
+            result += NESTED_MORSE[c]
         elif c.islower():
-            result += NESTED_MORE[c.upper()]
+            result += NESTED_MORSE[c.upper()]
         else:
             raise AssertionError("the arguments are bad")
 
