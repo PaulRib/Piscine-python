@@ -2,6 +2,7 @@ from sys import argv
 
 
 def main():
+    """Translate a text to morse language."""
     NESTED_MORSE = {
         " ": "/ ",
         "A": ".- ",

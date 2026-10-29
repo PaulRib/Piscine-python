@@ -31,6 +31,7 @@ def count_words(arg: str):
 
 
 def main():
+    """Check if the input is valid then count its words."""
     if len(sys.argv) > 2:
         raise AssertionError("more than one argument is provided")
 

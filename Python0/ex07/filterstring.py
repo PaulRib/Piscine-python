@@ -3,6 +3,8 @@ from sys import argv
 
 
 def main():
+    """Filter words in a string by removing words smaller than
+    the length passed on argv[2]."""
     if len(argv) != 3:
         raise AssertionError("the arguments are bad")
 
