@@ -3,6 +3,7 @@ import load_csv as lc
 
 
 def aff_pop(path: str):
+    """Show the population of two selected countries."""
     data = lc.load(path)
     if data is None:
         return
@@ -27,6 +28,7 @@ def aff_pop(path: str):
 
 
 def main():
+    """Run the program and handle errors."""
     try:
         aff_pop("population_total.csv")
     except (TypeError, ValueError, KeyError) as e:

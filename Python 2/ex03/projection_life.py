@@ -3,6 +3,7 @@ import load_csv as lc
 
 
 def projection(incomepath: str, lifepath: str):
+    """Show the relation between life expetancy and income per person."""
     income = lc.load(incomepath)
     life = lc.load(lifepath)
 
@@ -24,9 +25,10 @@ def projection(incomepath: str, lifepath: str):
 
 
 def main():
+    """Run the program and handle errors."""
     try:
-        projection("income_per_person_gdppercapita_ppp_inflation_adjusted.csv",
-                "life_expectancy_years.csv")
+        projection("income_per_person_gdppercapita_inflation_adjusted.csv",
+            "life_expectancy_years.csv")
     except (TypeError, ValueError, KeyError) as e:
         print(f"Error: {e}")
 
