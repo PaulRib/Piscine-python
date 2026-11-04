@@ -1,0 +1,15 @@
+Metadata-Version: 2.4
+Name: ft_package
+Version: 0.0.1
+Summary: A sample test package containing piscine python functions
+Home-page: https://github.com/PaulRib/ft_package
+Author: pribolzi
+Author-email: pribolzi@student.42mulhouse.fr
+License: MIT
+License-File: LICENSE
+Dynamic: author
+Dynamic: author-email
+Dynamic: home-page
+Dynamic: license
+Dynamic: license-file
+Dynamic: summary
