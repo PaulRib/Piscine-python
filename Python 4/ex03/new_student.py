@@ -23,8 +23,11 @@ class Student:
 def main():
     student = Student(name="Edward", surname="agle")
     print(student)
-    student1 = Student(name="Edward", surname="agle", id="toto")
-    print(student1)
+    try:
+        student1 = Student(name="Edward", surname="agle", id="toto")
+        print(student1)
+    except TypeError as e: 
+        print(f"TypeError: {e}")
 
 
 if __name__ == "__main__":

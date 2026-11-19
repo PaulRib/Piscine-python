@@ -17,7 +17,9 @@ def main():
     print("Testing a valid path:\n")
     print(load("life_expectancy_years.csv"))
     print("\nTesting an invalid path:\n")
-    print(load("notfound"))
+    print(load("load_csv.py"))
+    print("\nTesting a non-existent path:\n")
+    print(load("null"))
     print("\nTesting an invalid type:\n")
     print(load(None))
 

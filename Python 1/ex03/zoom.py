@@ -10,25 +10,25 @@ def ft_zoom(path: str) -> np.ndarray:
     content. Return an array containing
     the information of the sliced picture.
     Any invalid path will proc an TypeError."""
-    data = li.ft_load(path)
-    height, width, _ = data.shape
-    im = Image.fromarray(data).convert("L")
-    grey_data = np.array(im)
-    new_data = grey_data[200:height // 2 + 200, 200:width // 2 + 200,
-                         np.newaxis]
-    print(f"New shape after slicing: {new_data.shape}")
-    print(new_data)
-    plt.imshow(new_data[:, :, 0], cmap="gray")
-    plt.show()
-    return new_data
+    try:
+        data = li.ft_load(path)
+        h, w, _ = data.shape
+        im = Image.fromarray(data).convert("L")
+        grey_data = np.array(im)
+        new_data = grey_data[200:h // 2 + 200, 200:w // 2 + 200, np.newaxis]
+        print(f"New shape after slicing: {new_data.shape}")
+        print(new_data)
+        plt.imshow(new_data[:, :, 0], cmap="gray")
+        plt.show()
+        return new_data
+    except (TypeError, OSError, ValueError) as e:
+        print(f"Error: {e}")
+        return None
 
 
 def main():
     """Zoom the image to a 400 : 400 pixels square."""
-    try:
-        ft_zoom("animal.jpeg")
-    except (TypeError, OSError, ValueError) as e:
-        print(f"Error: {e}")
+    ft_zoom("animal.jpeg")
 
 
 if __name__ == "__main__":

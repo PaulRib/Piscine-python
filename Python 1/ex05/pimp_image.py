@@ -21,87 +21,104 @@ def ft_check_array(array):
 
 def ft_invert(array) -> np.ndarray:
     """Inverts the color of the image received."""
-    ft_check_array(array)
-    new_array = array.copy()
-    for row in new_array:
-        for pixel in row:
-            pixel[0] = 255 - pixel[0]
-            pixel[1] = 255 - pixel[1]
-            pixel[2] = 255 - pixel[2]
-    plt.imshow(new_array)
-    plt.show()
-    return new_array
+    try:
+        ft_check_array(array)
+        new_array = array.copy()
+        for row in new_array:
+            for pixel in row:
+                pixel[0] = 255 - pixel[0]
+                pixel[1] = 255 - pixel[1]
+                pixel[2] = 255 - pixel[2]
+        plt.imshow(new_array)
+        plt.show()
+        return new_array
+    except (TypeError, OSError, ValueError, IndexError) as e:
+        print(f"Error: {e}")
+        return None
 
 
 def ft_red(array) -> np.ndarray:
     """Convert the color of the image in red by putting other
     colors' value at 0."""
-    ft_check_array(array)
-    new_array = array.copy()
-    for row in new_array:
-        for pixel in row:
-            pixel[1] = 0
-            pixel[2] = 0
-    plt.imshow(new_array)
-    plt.show()
-    return new_array
+    try:
+        ft_check_array(array)
+        new_array = array.copy()
+        for row in new_array:
+            for pixel in row:
+                pixel[1] = 0
+                pixel[2] = 0
+        plt.imshow(new_array)
+        plt.show()
+        return new_array
+    except (TypeError, OSError, ValueError, IndexError) as e:
+        print(f"Error: {e}")
+        return None
 
 
 def ft_green(array) -> np.ndarray:
     """Convert the color of the image in green by putting other
     colors' value at 0."""
-    ft_check_array(array)
-    new_array = array.copy()
-    for row in new_array:
-        for pixel in row:
-            pixel[0] = 0
-            pixel[2] = 0
-    plt.imshow(new_array)
-    plt.show()
-    return new_array
+    try:
+        ft_check_array(array)
+        new_array = array.copy()
+        for row in new_array:
+            for pixel in row:
+                pixel[0] = 0
+                pixel[2] = 0
+        plt.imshow(new_array)
+        plt.show()
+        return new_array
+    except (TypeError, OSError, ValueError, IndexError) as e:
+        print(f"Error: {e}")
+        return None
 
 
 def ft_blue(array) -> np.ndarray:
     """Convert the color of the image in blue by putting other
     colors' value at 0."""
-    ft_check_array(array)
-    new_array = array.copy()
-    for row in new_array:
-        for pixel in row:
-            pixel[0] = 0
-            pixel[1] = 0
-    plt.imshow(new_array)
-    plt.show()
-    return new_array
+    try:
+        ft_check_array(array)
+        new_array = array.copy()
+        for row in new_array:
+            for pixel in row:
+                pixel[0] = 0
+                pixel[1] = 0
+        plt.imshow(new_array)
+        plt.show()
+        return new_array
+    except (TypeError, OSError, ValueError, IndexError) as e:
+        print(f"Error: {e}")
+        return None
 
 
 def ft_grey(array) -> np.ndarray:
     """Convert the color of the image in grey by getting the value of
     the green and putting it in the red and blue value."""
-    ft_check_array(array)
-    new_array = array.copy()
-    for row in new_array:
-        for pixel in row:
-            pixel[0] = pixel[1]
-            pixel[2] = pixel[1]
-    plt.imshow(new_array)
-    plt.show()
-    return new_array
+    try:
+        ft_check_array(array)
+        new_array = array.copy()
+        for row in new_array:
+            for pixel in row:
+                pixel[0] = pixel[1]
+                pixel[2] = pixel[1]
+        plt.imshow(new_array)
+        plt.show()
+        return new_array
+    except (TypeError, OSError, ValueError, IndexError) as e:
+        print(f"Error: {e}")
+        return None
 
 
 def main():
     """Change the image by putting it in inverted colors, red, green,
     blue then grey."""
-    try:
-        array = li.ft_load("landscape.jpg")
-        ft_invert(array)
-        ft_red(array)
-        ft_green(array)
-        ft_blue(array)
-        ft_grey(array)
-        print(ft_invert.__doc__)
-    except (TypeError, OSError, ValueError, IndexError) as e:
-        print(f"Error: {e}")
+    array = li.ft_load("landscape.jpg")
+    ft_invert(array)
+    ft_red(array)
+    ft_green(array)
+    ft_blue(array)
+    ft_grey(array)
+    print(ft_invert.__doc__)
 
 
 if __name__ == "__main__":

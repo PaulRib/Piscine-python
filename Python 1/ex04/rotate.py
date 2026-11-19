@@ -18,26 +18,27 @@ def ft_transpose(data: np.ndarray) -> np.ndarray:
 
 def ft_rotate(path: str) -> np.ndarray:
     """Rotate the image received by transposing it."""
-    data = li.ft_load(path)
-    im = Image.fromarray(data).convert("L")
-    grey_data = np.array(im)
-    zoomed_data = grey_data[80:480, 420:820, np.newaxis]
-    print(f"The shape of image is: {zoomed_data.shape}")
-    print(zoomed_data)
-    transposed_data = ft_transpose(zoomed_data[:, :, 0])
-    print(f"New shape after Transpose: {transposed_data.shape}")
-    print(transposed_data)
-    plt.imshow(transposed_data, cmap="gray")
-    plt.show()
-    return transposed_data
+    try:
+        data = li.ft_load(path)
+        im = Image.fromarray(data).convert("L")
+        grey_data = np.array(im)
+        zoomed_data = grey_data[80:480, 420:820, np.newaxis]
+        print(f"The shape of image is: {zoomed_data.shape}")
+        print(zoomed_data)
+        transposed_data = ft_transpose(zoomed_data[:, :, 0])
+        print(f"New shape after Transpose: {transposed_data.shape}")
+        print(transposed_data)
+        plt.imshow(transposed_data, cmap="gray")
+        plt.show()
+        return transposed_data
+    except (TypeError, OSError, ValueError, IndexError) as e:
+        print(f"Error: {e}")
+        return None
 
 
 def main():
     """Rotate the image by transposing it."""
-    try:
-        ft_rotate("animal.jpeg")
-    except (TypeError, OSError, ValueError, IndexError) as e:
-        print(f"Error: {e}")
+    ft_rotate("animal.jpeg")
 
 
 if __name__ == "__main__":

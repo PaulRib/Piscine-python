@@ -9,4 +9,3 @@ def load(path: str) -> pd.DataFrame | None:
         print(f"Error while opening the file: {e}")
         return None
     return data
-

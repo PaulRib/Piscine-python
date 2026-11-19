@@ -7,10 +7,14 @@ def ft_load(path: str) -> np.ndarray:
     its pixels content in RGB format. Return an array containing
     the information of the picture.
     Any invalid path will proc an TypeError"""
-    if not isinstance(path, str) or not path:
-        raise TypeError("Argument must be a valid path!")
-    with Image.open(path) as im:
-        data = np.array(im.convert("RGB"))
-    print(f"The shape of image is: {data.shape}")
-    print(data)
-    return data
+    try:
+        if not isinstance(path, str) or not path:
+            raise TypeError("Argument must be a valid path!")
+        with Image.open(path) as im:
+            data = np.array(im.convert("RGB"))
+        print(f"The shape of image is: {data.shape}")
+        print(data)
+        return data
+    except TypeError as e:
+        print(f"Error: {e}")
+        return None

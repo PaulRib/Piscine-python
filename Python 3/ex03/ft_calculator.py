@@ -27,6 +27,7 @@ class calculator:
             print(self.values)
         except ZeroDivisionError as e:
             print(f"Error: {e}")
+            return
 
 
 def main():
